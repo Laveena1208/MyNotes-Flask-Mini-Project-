@@ -10,14 +10,14 @@ from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_wtf import CSRFProtect
 
-db_user = "root"
-db_pass = "Kithani2001%40%40" # @ --->%40
-db_name = "my_notes"
+db_user = ""
+db_pass = "" 
+db_name = ""
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://{}:{}@localhost/{}".format(db_user, db_pass, db_name)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SECRET_KEY'] = '010546f7-8a3d-41ce-a4a9-224712b880bd'
+app.config['SECRET_KEY'] = ''
 db = SQLAlchemy(app)
 csrf = CSRFProtect()
 csrf.init_app(app)
